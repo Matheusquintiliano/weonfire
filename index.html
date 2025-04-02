@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mthws Crypto - Landing Page</title>
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="@mthwscrypto">
+  <meta property="og:description" content="Junte-se à maior comunidade brasileira de meme coins e descubra as melhores oportunidades em criptomoedas.">
+  <meta property="og:url" content="#">
+  <meta property="og:site_name" content="@mthwscrypto">
+
+  <!-- Standard Meta Tags -->
+  <meta name="description" content="Junte-se à maior comunidade brasileira de meme coins e descubra as melhores oportunidades em criptomoedas.">
+  <meta name="keywords" content="meme coin, criptomoeda, memecoin, comunidade cripto, investimento, blockchain, inovação, memes, Brasil">
+  <meta name="author" content="@mthwscrypto">
+
+  <!-- Link CSS -->
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body class="is-boxed has-animations">
+
+  <div class="body-wrap">
+    <!-- Header -->
+    <header class="site-header">
+      <div class="container">
+        <div class="site-header-inner">
+          <div class="brand header-brand">
+            <h1 class="m-0">
+              <a href="#">
+              </a>
+            </h1>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-inner">
+          <div class="hero-copy">
+            <h1>Junte-se à maior comunidade de memecoins do Brasil!</h1>
+            <p>Sua jornada no mundo cripto começa agora! Descubra como lucrar com memecoins sem complicação! Na nossa comunidade gratuita, você recebe calls diárias, aprende a operar e encontra as melhores oportunidades para multiplicar seu capital.</p>
+            <div class="hero-cta">
+              <a class="button button-primary" href="https://chat.whatsapp.com/BH4FgvJiaDc5RQMW7JJSyW">Entrar no Grupo</a>
+            </div>
+          </div>
+          <div class="hero-figure">
+            <img src="assets/MoedasPNG.png" alt="Ilustração de memecoins">
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Hero Section -->
+
+    <!-- Testimonials Section com Slider -->
+    <section class="testimonials">
+      <div class="container">
+        <center><h2 class="section-title">DEPOIMENTOS</h2></center>
+        <div class="slider">
+          <div class="slide">
+            <img src="assets/1.png">
+          </div>
+          <div class="slide">
+            <img src="assets/2.png">
+          </div>
+          <div class="slide">
+            <img src="assets/3.png">
+          </div>
+        </div>
+        <div class="slider-dots">
+          <button class="active"></button>
+          <button></button>
+          <button></button>
+        </div>
+      </div>
+    </section>
+    <!-- End Testimonials Section -->
+
+    <br><br><br>
+
+    <!-- Functionalities Section com 3 Cards -->
+    <section class="functionalities">
+      <div class="container">
+        <center><h2 class="section-title">O QUE VOCÊ ENCONTRA NO GRUPO?</h2></center>
+        <div class="functionalities-wrap">
+          <div class="functionality-item card">
+            <h3 style="color: #ffffff">CALLS DIARIOS</h3>
+            <p>Fique por dentro das melhores oportunidades do mercado com sinais enviados por especialistas diretamente no grupo.</p>
+          </div>
+          <div class="functionality-item card">
+            <h3 style="color: #ffffff">ANALISES EXCLUSIVAS</h3>
+            <p>Aprenda com quem vive do mercado, validando estratégias para lucrar com memecoins, mesmo começando do zero!</p>
+          </div>
+          <div class="functionality-item card">
+            <h3 style="color: #ffffff">LIVES EXCLUSIVAS</h3>
+            <p>Acompanhe análises ao vivo, tire suas dúvidas em tempo real e aprenda na prática como operar e multiplicar seu capital!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Functionalities Section -->
+
+    <br><br>
+
+    <!-- Call-to-Action Section -->
+    <center>
+      <section>
+        <div class="container">
+          <h3 class="section-title">NAO PERCA TEMPO!</h3>
+          <p>Junte-se à nossa comunidade e comece a lucrar com memecoins hoje mesmo.</p>
+          <a class="button button-primary" href="https://chat.whatsapp.com/BH4FgvJiaDc5RQMW7JJSyW">Entrar no Grupo</a>
+        </div>
+      </section>
+    </center>
+    <!-- End CTA Section -->
+
+    <br><br>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <p>Todos os direitos reservados @2025 - Mthws Crypto</p>
+      </div>
+    </footer>
+    <!-- End Footer -->
+  </div>
+  
+  <!-- JavaScript para o Slider -->
+   
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const slider = document.querySelector('.slider');
+      const slides = document.querySelectorAll('.slider .slide');
+      const dots = document.querySelectorAll('.slider-dots button');
+      const prevArrow = document.querySelector('.slider-arrow.prev');
+      const nextArrow = document.querySelector('.slider-arrow.next');
+      
+      function updateSlideWidth() {
+        // Considera o gap de 16px
+        return slides[0].offsetWidth + 16;
+      }
+      
+      // Navegação via dots
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          const slideWidth = updateSlideWidth();
+          slider.scrollTo({
+            left: index * slideWidth,
+            behavior: 'smooth'
+          });
+          dots.forEach(d => d.classList.remove('active'));
+          dot.classList.add('active');
+        });
+      });
+      
+      // Navegação via setas
+      prevArrow.addEventListener('click', () => {
+        slider.scrollBy({
+          left: -updateSlideWidth(),
+          behavior: 'smooth'
+        });
+      });
+      nextArrow.addEventListener('click', () => {
+        slider.scrollBy({
+          left: updateSlideWidth(),
+          behavior: 'smooth'
+        });
+      });
+      
+      // Atualiza a bolinha ativa conforme o scroll
+      slider.addEventListener('scroll', () => {
+        const slideWidth = updateSlideWidth();
+        const index = Math.round(slider.scrollLeft / slideWidth);
+        dots.forEach(d => d.classList.remove('active'));
+        if (dots[index]) dots[index].classList.add('active');
+      });
+    });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
